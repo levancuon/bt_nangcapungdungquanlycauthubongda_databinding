@@ -1,5 +1,8 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<html lang="en">
 <head>
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -9,58 +12,47 @@
 <div class="container">
     <div class="justify-content-center">
         <div class="card" style="width: 18rem;">
-            <img src="https://media.craiyon.com/2023-11-18/2IgLoFjjRieKJQE3K3UuCw.webp"  class="card-img-top" >
+            <img src="https://media.craiyon.com/2023-11-18/2IgLoFjjRieKJQE3K3UuCw.webp" class="card-img-top">
             <div class="card-body">
-                <h5 class="card-title" >Thêm cầu thủ</h5>
-                <form action="/player/create" th:object="${player}" method="post">
+                <h5 class="card-title">${player.name}</h5>
                 <table>
-<!--                    <tr>-->
-<!--                        <td>-->
-<!--                            <p class="card-text">Id</p>-->
-<!--                        </td>-->
-<!--                        <td>:</td>-->
-<!--                        <td><input class="card-text" th:field="*{id}"/></td>-->
-<!--                    </tr>-->
                     <tr>
                         <td>
                             <p class="card-text">Họ và tên</p>
                         </td>
                         <td>:</td>
-                        <td><input class="card-text" th:field="*{name}"/></td>
+                        <td><p class="card-text">${player.name}</p></td>
                     </tr>
                     <tr>
                         <td>
                             <p class="card-text">Ngày sinh</p>
                         </td>
                         <td>:</td>
-                        <td><input class="card-text" th:field="*{dob}"/></td>
+                        <td><p class="card-text">${player.dob}</p></td>
                     </tr>
                     <tr>
                         <td>
                             <p class="card-text">Kinh nghiệm</p>
                         </td>
                         <td>:</td>
-                        <td><input class="card-text" th:field="*{experience}"/></td>
+                        <td><p class="card-text">${player.experience}</p></td>
                     </tr>
                     <tr>
                         <td>
-                            <p class="card-text" >Vị trí</p>
+                            <p class="card-text">Vị trí</p>
                         </td>
                         <td>:</td>
-                        <td><input class="card-text" th:field="*{position}"/></td>
-                    </tr>
-
-                    <tr>
-                        <td><button>Lưu</button></td>
+                        <td><p class="card-text">${player.position}</p></td>
                     </tr>
                 </table>
-                </form>
+                <p class="card-text"></p>
+                <a href="${pageContext.request.contextPath}/player" class="btn btn-primary">Trở lại</a>
             </div>
         </div>
     </div>
 </div>
+
 </body>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
-
 </html>

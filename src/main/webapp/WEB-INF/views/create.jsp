@@ -1,0 +1,61 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%@ taglib prefix = "c" uri = "http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Title</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container">
+  <div class="justify-content-center">
+    <div class="card" style="width: 18rem;">
+      <img src="https://media.craiyon.com/2023-11-18/2IgLoFjjRieKJQE3K3UuCw.webp" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">Thêm cầu thủ</h5>
+        <form:form action="/player/create" modelAttribute="player" method="post">
+          <table>
+            <tr>
+              <td>
+                <p class="card-text">Họ và tên</p>
+              </td>
+              <td>:</td>
+              <td><form:input path="name" cssClass="card-text"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="card-text">Ngày sinh</p>
+              </td>
+              <td>:</td>
+              <td><form:input path="dob" cssClass="card-text"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="card-text">Kinh nghiệm</p>
+              </td>
+              <td>:</td>
+              <td><form:input path="experience" cssClass="card-text"/></td>
+            </tr>
+            <tr>
+              <td>
+                <p class="card-text">Vị trí</p>
+              </td>
+              <td>:</td>
+              <td><form:input path="position" cssClass="card-text"/></td>
+            </tr>
+            <tr>
+              <td><button type="submit" class="btn btn-primary">Lưu</button></td>
+            </tr>
+          </table>
+        </form:form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
+</body>
+</html>
